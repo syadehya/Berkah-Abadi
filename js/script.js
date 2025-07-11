@@ -85,3 +85,37 @@ function fadeOut() {
 }
 
 window.onload = fadeOut;
+
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Ambil nilai dari setiap input
+  const nama = document.getElementById("nama").value;
+  const telepon = document.getElementById("telepon").value;
+  const pesanan = document.getElementById("pesanan").value;
+  const tambahan = document.getElementById("tambahan").value;
+  const jumlah = document.getElementById("jumlah").value;
+  const waktu = document.getElementById("waktu").value;
+  const alamat = document.getElementById("alamat").value;
+  const pesan = document.getElementById("pesan").value;
+
+  // Susun pesan WhatsApp
+  const message = `Halo Admin,%0A
+Saya ingin memesan produk dengan detail berikut:%0A%0A
+🧍 Nama: ${nama}%0A
+📞 No. Telp: ${telepon}%0A
+📦 Pesanan: ${pesanan}%0A
+➕ Produk Tambahan: ${tambahan}%0A
+🔢 Jumlah: ${jumlah}%0A
+📅 Waktu & Tanggal: ${waktu}%0A
+📍 Alamat: ${alamat}%0A
+📝 Pesan Tambahan: ${pesan}%0A%0A
+Mohon konfirmasi ya, terima kasih.`;
+
+  // Link WhatsApp Admin
+  const adminNumber = "+6282226872587"; // tanpa tanda 0 depan
+  const waUrl = `https://wa.me/${adminNumber}?text=${message}`;
+
+  // Buka WhatsApp
+  window.open(waUrl, "_blank");
+});
