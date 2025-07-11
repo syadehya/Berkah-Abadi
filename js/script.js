@@ -41,8 +41,9 @@ document.querySelector("#close").onclick = () => {
 var swiper = new Swiper(".home-slider", {
   spaceBetween: 150,
   centeredSlides: true,
+  speed: 800, // durasi transisi geser, makin tinggi makin halus
   autoplay: {
-    delay: 10000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -50,8 +51,8 @@ var swiper = new Swiper(".home-slider", {
     clickable: true,
   },
   loop: true,
+  grabCursor: true,
 });
-
 var swiper = new Swiper(".review-slider", {
   spaceBetween: 20,
   centeredSlides: true,
