@@ -636,60 +636,59 @@
         <h3 class="sub-heading">pesan sekarang</h3>
         <h1 class="heading">mudah dan cepat</h1>
 
-        <form action="">
+        <form id="orderForm">
           <div class="inputBox">
             <div class="input">
               <span>Nama anda</span>
-              <input type="text" placeholder="masukan nama anda" />
+              <input type="text" id="nama" placeholder="masukan nama anda" required />
             </div>
             <div class="input">
               <span>Nomor telpon</span>
-              <input type="number" placeholder="masukan nomer anda" />
+              <input type="number" id="telepon" placeholder="masukan nomer anda" required />
             </div>
           </div>
           <div class="inputBox">
             <div class="input">
               <span>Pesanan anda</span>
-              <input type="text" placeholder="masukan produk" />
+              <input type="text" id="pesanan" placeholder="masukan produk" required />
             </div>
             <div class="input">
               <span>Produk tambahan</span>
-              <input type="test" placeholder="masukan produk" />
+              <input type="text" id="tambahan" placeholder="masukan produk" />
             </div>
           </div>
           <div class="inputBox">
             <div class="input">
               <span>Berapa banyak</span>
-              <input type="number" placeholder="berapa banyak" />
+              <input type="number" id="jumlah" placeholder="berapa banyak" required />
             </div>
             <div class="input">
               <span>waktu dan tanggal</span>
-              <input type="datetime-local" />
+              <input type="datetime-local" id="waktu" required />
             </div>
           </div>
           <div class="inputBox">
             <div class="input">
               <span>alamat</span>
               <textarea
-                name=""
+                id="alamat"
                 placeholder="masukkan alamat anda"
-                id=""
                 cols="30"
                 rows="10"
+                required
               ></textarea>
             </div>
             <div class="input">
               <span>pesan</span>
               <textarea
-                name=""
+                id="pesan"
                 placeholder="tinggalkan pesan"
-                id=""
                 cols="30"
                 rows="10"
               ></textarea>
             </div>
           </div>
-
+        
           <input type="submit" value="Pesan Sekarang" class="btn" />
         </form>
       </section>
