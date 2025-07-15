@@ -53,6 +53,7 @@ var swiper = new Swiper(".home-slider", {
   loop: true,
   grabCursor: true,
 });
+
 var swiper = new Swiper(".review-slider", {
   spaceBetween: 20,
   centeredSlides: true,
@@ -96,21 +97,23 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const pesanan = document.getElementById("pesanan").value;
   const tambahan = document.getElementById("tambahan").value;
   const jumlah = document.getElementById("jumlah").value;
-  const waktu = document.getElementById("waktu").value;
+  const tanggal = document.getElementById("tanggal").value;
+  const ukuran = document.getElementById("ukuran").value;
   const alamat = document.getElementById("alamat").value;
   const pesan = document.getElementById("pesan").value;
 
   // Susun pesan WhatsApp
   const message = `Halo Admin,%0A
 Saya ingin memesan produk dengan detail berikut:%0A%0A
-🧍 Nama: ${nama}%0A
-📞 No. Telp: ${telepon}%0A
-📦 Pesanan: ${pesanan}%0A
-➕ Produk Tambahan: ${tambahan}%0A
-🔢 Jumlah: ${jumlah}%0A
-📅 Waktu & Tanggal: ${waktu}%0A
-📍 Alamat: ${alamat}%0A
-📝 Pesan Tambahan: ${pesan}%0A%0A
+Nama: ${nama}%0A
+No. Telp: ${telepon}%0A
+Pesanan: ${pesanan}%0A
+Produk Tambahan: ${tambahan}%0A
+Jumlah: ${jumlah}%0A
+Tanggal: ${tanggal}%0A
+Ukuran: ${ukuran}%0A
+Alamat: ${alamat}%0A
+Pesan Tambahan: ${pesan}%0A%0A
 Mohon konfirmasi ya, terima kasih.`;
 
   // Link WhatsApp Admin
