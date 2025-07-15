@@ -230,7 +230,7 @@
             <p>
               Berkah Abadi Konveksi Tayu adalah usaha konveksi lokal yang
               bergerak di bidang produksi kaos dengan kualitas terpercaya dan
-              harga bersahabat. Berlokasi di Tayu, kami telah melayani berbagai
+              harga bersahabat. <a href="https://maps.app.goo.gl/RJXGkpScQGVnr8Js7" target="_blank" style="color: blue; text-decoration: underline;">Berlokasi di Tayu</a>, kami telah melayani berbagai
               kebutuhan kaos baik untuk individu, komunitas, sekolah,
               organisasi, hingga keperluan bisnis dan event. Kami menerima
               pesanan custom desain sesuai keinginan pelanggan, mulai dari kaos
@@ -246,7 +246,7 @@
             <div class="icons-container">
               <div class="icons">
                 <i class="fas fa-headset"></i>
-                <span>24 jam layanan</span>
+                <span>Pelayanan 08.00-16.00</span>
               </div>
               <div class="icons">
                 <i class="fas fa-dollar-sign"></i>
@@ -663,10 +663,148 @@
               <input type="number" id="jumlah" placeholder="berapa banyak" required />
             </div>
             <div class="input">
-              <span>waktu dan tanggal</span>
-              <input type="datetime-local" id="waktu" required />
-            </div>
+              <span>tanggal</span>
+              <input type="date" id="tanggal" required />
+            </div>            
           </div>
+          <div class="inputBox">
+            <div class="input">
+              <span>Pilih Ukuran</span>
+              <select id="ukuran" required style="background: #eee; border-radius: 0.5rem; padding: 1rem; font-size: 1.6rem; color: var(--gelap); width: 100%; margin-bottom: 1rem;">
+                <option value="">-- Pilih Ukuran --</option>
+                <optgroup label="Ukuran Anak">
+                  <option value="S Anak (0-1th) - LB 27 cm PB 38 cm">S Anak (0-1th) - LB 27 cm PB 38 cm</option>
+                  <option value="M Anak (1-2th) - LB 30 cm PB 42 cm">M Anak (1-2th) - LB 30 cm PB 42 cm</option>
+                  <option value="L Anak (3-4th) - LB 33 cm PB 46 cm">L Anak (3-4th) - LB 33 cm PB 46 cm</option>
+                  <option value="XL Anak (5-6th) - LB 36 cm PB 54 cm">XL Anak (5-6th) - LB 36 cm PB 54 cm</option>
+                  <option value="XXL Anak (7-8th) - LB 39 cm PB 54 cm">XXL Anak (7-8th) - LB 39 cm PB 54 cm</option>
+                  <option value="XXXL Anak (9-10th) - LB 42 cm PB 58 cm">XXXL Anak (9-10th) - LB 42 cm PB 58 cm</option>
+                </optgroup>
+                <optgroup label="Ukuran Dewasa">
+                  <option value="S Dewasa - LB 45 cm PB 65 cm">S Dewasa - LB 45 cm PB 65 cm</option>
+                  <option value="M Dewasa - LB 48 cm PB 70 cm">M Dewasa - LB 48 cm PB 70 cm</option>
+                  <option value="L Dewasa - LB 51 cm PB 75 cm">L Dewasa - LB 51 cm PB 75 cm</option>
+                  <option value="XL Dewasa - LB 54 cm PB 75 cm">XL Dewasa - LB 54 cm PB 75 cm</option>
+                  <option value="XXL Dewasa - LB 57 cm PB 78 cm">XXL Dewasa - LB 57 cm PB 78 cm</option>
+                  <option value="XXXL Dewasa - LB 60 cm PB 82 cm">XXXL Dewasa - LB 60 cm PB 82 cm</option>
+                  <option value="XXXXL Dewasa - LB 63 cm PB 82 cm">XXXXL Dewasa - LB 63 cm PB 82 cm</option>
+                </optgroup>
+                <optgroup label="BLAZZER">
+                  <option value="S - LB 48 cm PB 70 cm">S - LB 48 cm PB 70 cm</option>
+                  <option value="M - LB 51 cm PB 75 cm">M - LB 51 cm PB 75 cm</option>
+                  <option value="L - LB 54 cm PB 75 cm">L - LB 54 cm PB 75 cm</option>
+                  <option value="XL - LB 57 cm PB 78 cm">XL - LB 57 cm PB 78 cm</option>
+                  <option value="XXL - LB 60 cm PB 82 cm">XXL - LB 60 cm PB 82 cm</option>
+                  <option value="XXXL - LB 63 cm PB 82 cm">XXXL - LB 63 cm PB 82 cm</option>
+                </optgroup>
+                <optgroup label="KEMEJA">
+                  <option value="S - LB 48 cm PB 70 cm">S - LB 48 cm PB 70 cm</option>
+                  <option value="M - LB 51 cm PB 75 cm">M - LB 51 cm PB 75 cm</option>
+                  <option value="L - LB 54 cm PB 75 cm">L - LB 54 cm PB 75 cm</option>
+                  <option value="XL - LB 57 cm PB 78 cm">XL - LB 57 cm PB 78 cm</option>
+                  <option value="XXL - LB 60 cm PB 82 cm">XXL - LB 60 cm PB 82 cm</option>
+                  <option value="XXXL - LB 63 cm PB 82 cm">XXXL - LB 63 cm PB 82 cm</option>
+                </optgroup>
+                <optgroup label="SEMI TUNIK">
+                  <option value="S - LB 48 cm PB 70 cm">S - LB 48 cm PB 70 cm</option>
+                  <option value="M - LB 51 cm PB 75 cm">M - LB 51 cm PB 75 cm</option>
+                  <option value="L - LB 54 cm PB 75 cm">L - LB 54 cm PB 75 cm</option>
+                  <option value="XL - LB 57 cm PB 78 cm">XL - LB 57 cm PB 78 cm</option>
+                  <option value="XXL - LB 60 cm PB 82 cm">XXL - LB 60 cm PB 82 cm</option>
+                  <option value="XXXL - LB 63 cm PB 82 cm">XXXL - LB 63 cm PB 82 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN GURU">
+                  <option value="S - LB 48 cm PB 70 cm">S - LB 48 cm PB 70 cm</option>
+                  <option value="M - LB 51 cm PB 75 cm">M - LB 51 cm PB 75 cm</option>
+                  <option value="L - LB 54 cm PB 75 cm">L - LB 54 cm PB 75 cm</option>
+                  <option value="XL - LB 57 cm PB 78 cm">XL - LB 57 cm PB 78 cm</option>
+                  <option value="XXL - LB 60 cm PB 82 cm">XXL - LB 60 cm PB 82 cm</option>
+                  <option value="XXXL - LB 63 cm PB 82 cm">XXXL - LB 63 cm PB 82 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN PAUD">
+                  <option value="S - LB 33 cm PB 46 cm">S - LB 33 cm PB 46 cm</option>
+                  <option value="M - LB 36 cm PB 48 cm">M - LB 36 cm PB 48 cm</option>
+                  <option value="L - LB 38 cm PB 48 cm">L - LB 38 cm PB 48 cm</option>
+                  <option value="XL - LB 40 cm PB 50 cm">XL - LB 40 cm PB 50 cm</option>
+                  <option value="XXL - LB 42 cm PB 52 cm">XXL - LB 42 cm PB 52 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN SD">
+                  <option value="S - LB 40 cm PB 54 cm">S - LB 40 cm PB 54 cm</option>
+                  <option value="M - LB 42 cm PB 57 cm">M - LB 42 cm PB 57 cm</option>
+                  <option value="L - LB 44 cm PB 60 cm">L - LB 44 cm PB 60 cm</option>
+                  <option value="XL - LB 46 cm PB 63 cm">XL - LB 46 cm PB 63 cm</option>
+                  <option value="XXL - LB 48 cm PB 66 cm">XXL - LB 48 cm PB 66 cm</option>
+                  <option value="XXXL - LB 50 cm PB 68 cm">XXXL - LB 50 cm PB 68 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN SMA">
+                  <option value="S - LB 45 cm PB 65 cm">S - LB 45 cm PB 65 cm</option>
+                  <option value="M - LB 48 cm PB 70 cm">M - LB 48 cm PB 70 cm</option>
+                  <option value="L - LB 51 cm PB 75 cm">L - LB 51 cm PB 75 cm</option>
+                  <option value="XL - LB 54 cm PB 75 cm">XL - LB 54 cm PB 75 cm</option>
+                  <option value="XXL - LB 57 cm PB 78 cm">XXL - LB 57 cm PB 78 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN SMP">
+                  <option value="S - LB 45 cm PB 68 cm">S - LB 45 cm PB 68 cm</option>
+                  <option value="M - LB 48 cm PB 70 cm">M - LB 48 cm PB 70 cm</option>
+                  <option value="L - LB 50 cm PB 72 cm">L - LB 50 cm PB 72 cm</option>
+                  <option value="XL - LB 53 cm PB 73 cm">XL - LB 53 cm PB 73 cm</option>
+                  <option value="XXL - LB 57 cm PB 75 cm">XXL - LB 57 cm PB 75 cm</option>
+                </optgroup>
+                <optgroup label="SETELAN TK">
+                  <option value="S - LB 36 cm PB 48 cm">S - LB 36 cm PB 48 cm</option>
+                  <option value="M - LB 38 cm PB 48 cm">M - LB 38 cm PB 48 cm</option>
+                  <option value="L - LB 40 cm PB 50 cm">L - LB 40 cm PB 50 cm</option>
+                  <option value="XL - LB 42 cm PB 54 cm">XL - LB 42 cm PB 54 cm</option>
+                  <option value="XXL - LB 44 cm PB 54 cm">XXL - LB 44 cm PB 54 cm</option>
+                </optgroup>
+                <optgroup label="TUNIK">
+                  <option value="S - LB 45 cm PB 92 cm">S - LB 45 cm PB 92 cm</option>
+                  <option value="M - LB 48 cm PB 92 cm">M - LB 48 cm PB 92 cm</option>
+                  <option value="L - LB 51 cm PB 95 cm">L - LB 51 cm PB 95 cm</option>
+                  <option value="XL - LB 54 cm PB 95 cm">XL - LB 54 cm PB 95 cm</option>
+                  <option value="XXL - LB 57 cm PB 97 cm">XXL - LB 57 cm PB 97 cm</option>
+                  <option value="XXXL - LB 60 cm PB 100 cm">XXXL - LB 60 cm PB 100 cm</option>
+                  <option value="XXXXL - LB 63 cm PB 100 cm">XXXXL - LB 63 cm PB 100 cm</option>
+                </optgroup>
+              </select>
+              <button type="button" onclick="toggleSizeChart()" style="padding: 0.8rem 1.2rem; background: #eee; border-radius: .5rem; font-size: 1.4rem;">Lihat Detail Ukuran</button>
+            </div>
+            <div id="sizeChartPopup" style="display: none; background: white; padding: 2rem; border: 1px solid #aaa; border-radius: .5rem; position: fixed; top: 10%; left: 10%; width: 80%; max-height: 80%; overflow-y: auto; z-index: 999;">
+              <h3>Ukuran Anak</h3>
+              <ul>
+                <li>S (0-1th) : LB 27 cm, PB 36 cm</li>
+                <li>M (1-2th) : LB 30 cm, PB 42 cm</li>
+                <li>L (3-4th) : LB 33 cm, PB 46 cm</li>
+                <li>XL (5-6th) : LB 36 cm, PB 54 cm</li>
+                <li>XXL (7-8th) : LB 39 cm, PB 54 cm</li>
+                <li>XXXL (9-10th) : LB 42 cm, PB 58 cm</li>
+              </ul>
+              <p><em>*Selisih 1-2 cm dari ukuran normal. Estimasi usia tergantung berat badan anak.</em></p>
+              <p><em> LB: Adalah Lebar Badan</em></p>
+              <p><em> PB: Adalah Panjang Badan</em></p>
+              <h3>Ukuran Dewasa</h3>
+              <ul>
+                <li>S: LB 45 cm, PB 65 cm</li>
+                <li>M: LB 48 cm, PB 70 cm</li>
+                <li>L: LB 51 cm, PB 75 cm</li>
+                <li>XL: LB 54 cm, PB 75 cm</li>
+                <li>XXL: LB 57 cm, PB 78 cm</li>
+                <li>XXXL: LB 60 cm, PB 82 cm</li>
+                <li>XXXXL: LB 63 cm, PB 82 cm</li>
+              </ul>
+              <p><em>*Ukuran bisa selisih 1-2 cm dari ukuran normal.</em></p>
+              <p><em> LB: Adalah Lebar Badan</em></p>
+              <p><em> PB: Adalah Panjang Badan</em></p>
+              <button onclick="toggleSizeChart()" style="margin-top: 1rem; background: crimson; color: white; border: none; padding: 1rem; border-radius: .5rem;">Tutup</button>
+            </div>
+            <script>
+              function toggleSizeChart() {
+                const popup = document.getElementById("sizeChartPopup");
+                popup.style.display = popup.style.display === "none" ? "block" : "none";
+              }
+            </script>
+                        
+          </div>          
           <div class="inputBox">
             <div class="input">
               <span>alamat</span>
@@ -687,6 +825,7 @@
                 rows="10"
               ></textarea>
             </div>
+            
           </div>
         
           <input type="submit" value="Pesan Sekarang" class="btn" />
