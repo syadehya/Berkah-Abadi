@@ -248,6 +248,11 @@ header .icons #menu-bars {
   position: relative;
   overflow: hidden;
   text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: var(--light-color);
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
 .discc .box-container .box .fa-heart,
