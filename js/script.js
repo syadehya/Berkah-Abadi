@@ -30,13 +30,42 @@ window.onscroll = () => {
   });
 };
 
-document.querySelector("#search-icon").onclick = () => {
+// Toggle form tampil
+document.querySelector("#search-icon")?.addEventListener("click", () => {
   document.querySelector("#search-form").classList.toggle("active");
-};
+});
 
-document.querySelector("#close").onclick = () => {
+// Tombol close
+document.querySelector("#close").addEventListener("click", () => {
   document.querySelector("#search-form").classList.remove("active");
-};
+
+  // Reset hasil pencarian
+  document.querySelector("#search-box").value = "";
+  document.querySelectorAll(".menu .box").forEach((box) => {
+    box.style.display = "block";
+  });
+});
+
+// Fungsi pencarian
+document.querySelector("#search-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const keyword = document.querySelector("#search-box").value.toLowerCase();
+  const boxes = document.querySelectorAll(".menu .box");
+
+  boxes.forEach((box) => {
+    const title = box.querySelector("h3").textContent.toLowerCase();
+    const desc = box.querySelector("p").textContent.toLowerCase();
+
+    if (title.includes(keyword) || desc.includes(keyword)) {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  });
+
+  document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" });
+});
 
 var swiper = new Swiper(".home-slider", {
   spaceBetween: 150,
