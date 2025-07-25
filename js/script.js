@@ -152,3 +152,60 @@ Mohon konfirmasi ya, terima kasih.`;
   // Buka WhatsApp
   window.open(waUrl, "_blank");
 });
+
+// Tambahkan produk ke favorit (dipanggil saat klik hati produk)
+function addToFavorites(event, id, name, image, price) {
+  event.preventDefault();
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  if (!favorites.some((item) => item.id === id)) {
+    favorites.push({ id, name, image, price });
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    alert("Produk ditambahkan ke favorit!");
+  } else {
+    alert("Produk sudah ada di favorit.");
+  }
+}
+
+// Menampilkan popup favorit saat ikon hati di navbar diklik
+document
+  .getElementById("navbar-favorite-icon")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const popup = document.getElementById("favorite-popup");
+    const list = document.getElementById("favorite-list");
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (popup.style.display === "block") {
+      popup.style.display = "none";
+      return;
+    }
+
+    if (favorites.length === 0) {
+      list.innerHTML = "<p>Tidak ada produk favorit.</p>";
+    } else {
+      list.innerHTML = "";
+      favorites.forEach((item) => {
+        list.innerHTML += `
+        <div style="display:flex; align-items:center; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:10px;">
+          <img src="${item.image}" width="50" style="margin-right:10px;" />
+          <div>
+            <strong>${item.name}</strong><br/>
+            <span>${item.price}</span>
+          </div>
+        </div>
+      `;
+      });
+    }
+
+    popup.style.display = "block";
+  });
+
+// Menutup popup jika klik di luar
+document.addEventListener("click", function (event) {
+  const popup = document.getElementById("favorite-popup");
+  const icon = document.getElementById("navbar-favorite-icon");
+  if (!popup.contains(event.target) && !icon.contains(event.target)) {
+    popup.style.display = "none";
+  }
+});
