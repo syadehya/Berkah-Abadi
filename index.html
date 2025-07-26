@@ -44,7 +44,7 @@
           <i class="fas fa-bars" id="menu-bars"></i>
           <i class="fas fa-search" id="search-icon"></i>
           <a href="#" class="fas fa-heart" id="navbar-favorite-icon"></a>
-          <a href="#menu" class="fas fa-shopping-cart"></a>
+          
         </div>
       </header>
 
@@ -559,7 +559,21 @@
             <h4>Produk Favorit ❤️</h4>
             <div id="favorite-list"></div>
           </div>
-          
+          <!-- POPUP -->
+<div id="popup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="" />
+    <h3 id="popup-title"></h3>
+    <p id="popup-description"></p>
+    <span id="popup-price" class="price"></span>
+    <div class="popup-buttons">
+      <a id="popup-buy-link" target="_blank" class="btn">Beli Sekarang</a>
+      
+    </div>
+  </div>
+</div>
+
       </section>
 
       <!-- menu section akhir -->
@@ -917,7 +931,7 @@
 
       <!-- loader part  -->
       <div class="loader-container">
-        <img src="images/terbaruloop.gif" alt="" />
+        <img src="images/cart-5504-unscreen.gif" alt="" />
       </div>
     </div>
 
