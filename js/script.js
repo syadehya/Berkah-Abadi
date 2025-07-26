@@ -154,58 +154,90 @@ Mohon konfirmasi ya, terima kasih.`;
 });
 
 // Tambahkan produk ke favorit (dipanggil saat klik hati produk)
-function addToFavorites(event, id, name, image, price) {
+function addToFavorites(event, id, name, image, price, description) {
   event.preventDefault();
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
+  // Tambahkan ke localStorage jika belum ada
   if (!favorites.some((item) => item.id === id)) {
-    favorites.push({ id, name, image, price });
+    favorites.push({ id, name, image, price, description });
+
     localStorage.setItem("favorites", JSON.stringify(favorites));
     alert("Produk ditambahkan ke favorit!");
   } else {
     alert("Produk sudah ada di favorit.");
   }
+
+  // Refresh tampilan popup favorit (jika terbuka)
+  refreshFavoriteList();
 }
 
-// Menampilkan popup favorit saat ikon hati di navbar diklik
+// Tampilkan popup favorit saat ikon hati di navbar diklik
 document
   .getElementById("navbar-favorite-icon")
   .addEventListener("click", function (e) {
     e.preventDefault();
     const popup = document.getElementById("favorite-popup");
-    const list = document.getElementById("favorite-list");
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     if (popup.style.display === "block") {
       popup.style.display = "none";
-      return;
-    }
-
-    if (favorites.length === 0) {
-      list.innerHTML = "<p>Tidak ada produk favorit.</p>";
     } else {
-      list.innerHTML = "";
-      favorites.forEach((item) => {
-        list.innerHTML += `
-        <div style="display:flex; align-items:center; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:10px;">
-          <img src="${item.image}" width="50" style="margin-right:10px;" />
-          <div>
-            <strong>${item.name}</strong><br/>
-            <span>${item.price}</span>
-          </div>
-        </div>
-      `;
-      });
+      refreshFavoriteList(); // isi ulang isi popup
+      popup.style.display = "block";
     }
-
-    popup.style.display = "block";
   });
 
-// Menutup popup jika klik di luar
-document.addEventListener("click", function (event) {
-  const popup = document.getElementById("favorite-popup");
-  const icon = document.getElementById("navbar-favorite-icon");
-  if (!popup.contains(event.target) && !icon.contains(event.target)) {
-    popup.style.display = "none";
+function refreshFavoriteList() {
+  const list = document.getElementById("favorite-list");
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  if (favorites.length === 0) {
+    list.innerHTML = "<p>Tidak ada produk favorit.</p>";
+  } else {
+    list.innerHTML = "";
+    favorites.forEach((item) => {
+      list.innerHTML += `
+          <div style="display:flex; align-items:center; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:10px;">
+            <img src="${item.image}" width="50" style="margin-right:10px;" />
+            <div style="flex-grow:1;">
+              <strong>${item.name}</strong><br/>
+              <span>${item.price}</span><br/>
+              <button onclick="showProductPopup('${item.name}', '${item.image}', '${item.price}', \`${item.description}\`)" style="margin-top:5px;">Lihat</button>
+              <button onclick="removeFromFavorites('${item.id}')" style="margin-top:5px; margin-left:5px; background-color:#f44336; color:white;">Hapus</button>
+            </div>
+          </div>
+        `;
+    });
   }
-});
+}
+
+// Tampilkan popup detail produk dari favorit
+function showProductPopup(title, image, price) {
+  document.getElementById("popup-image").src = image;
+  document.getElementById("popup-title").innerText = title;
+
+  document.getElementById("popup-price").innerText = price;
+
+  document.getElementById(
+    "popup-buy-link"
+  ).href = `https://wa.me/6282226872587?text=Halo%20admin,%20saya%20ingin%20beli%20${encodeURIComponent(
+    title
+  )}%20seharga%20${encodeURIComponent(price)}.%0AGambar:%20${encodeURIComponent(
+    image
+  )}`;
+
+  document.getElementById("popup").style.display = "flex";
+}
+
+function removeFromFavorites(id) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  favorites = favorites.filter((item) => item.id !== id);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  refreshFavoriteList();
+  alert("Produk dihapus dari favorit!");
+}
+
+// Tutup popup detail
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
